@@ -1,0 +1,32 @@
+! Spaceink
+! https://github.com/bcardoso/spaceink-theme
+
+*.foreground: #e1cebb
+*.background: #0f0b1c
+*.cursorColor: #838dd3
+URxvt.cursorColor: #838dd3
+
+! black
+*.color0: #0f0b1c
+*.color8: #434c94
+! red
+*.color1: #ee924b
+*.color9: #f55462
+! green
+*.color2: #4ab980
+*.color10: #5cca92
+! yellow
+*.color3: #dcc1a6
+*.color11: #dcc1a6
+! blue
+*.color4: #759dbf
+*.color12: #759dbf
+! magenta
+*.color5: #ce5a79
+*.color13: #ad7cd6
+! cyan
+*.color6: #34a4a4
+*.color14: #34a4a4
+! white
+*.color7: #d7b592
+*.color15: #ebdbcb
