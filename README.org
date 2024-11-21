@@ -1,0 +1,57 @@
+#+AUTHOR: Bruno Cardoso <cardoso.bc@gmail.com>
+#+DATE: 2024-11-20
+#+STARTUP: indent content
+#+FILETAGS: github spaceink
+
+* Spaceink
+
+[[file:screenshot.png]]
+
+
+** Installation
+
+#+begin_src emacs-lisp
+(use-package spaceink-theme
+  :load-path "/path/to/spaceink-theme"
+  :config
+  (load-theme 'spaceink t))
+#+end_src
+
+
+** Export colors
+
+In =spaceink-export.el=, the function =spaceink-export-xresources= exports color definitions to Xresources format.
+
+- [[file:spaceink.Xresources][spaceink.Xresources]]
+
+If you wish to use =spaceink= colors in the terminal, add the following line at the end of your =~/.Xresources= file:
+
+#+begin_src conf
+#include "/path/to/spaceink.Xresources"
+#+end_src
+
+And reload the file:
+
+#+begin_src sh
+xrdb -load  ~/.Xresources
+#+end_src
+
+
+** Color generator
+
+=spaceink-colors.el= (or =sic=) contains functions for generating the color shades used by =spaceink=.
+
+It depends on [[https://github.com/neeasade/ct.el][ct.el]] or the command-line tool [[https://github.com/sharkdp/pastel][pastel]]. The commands =sic-use-ct-commands= and =sic-use-pastel-commands= define which backend will be used.
+
+This package is *not* required by the theme: it's just the tool I've been using to generate and manipulate colors. The function =sic-adjust= is probably the most useful one, as it returns a given color adjusted by hue, saturation and lightness.
+
+
+** History
+
+Several years ago, I settled with [[https://github.com/emacsmirror/inkpot-theme][inkpot-theme]] as my preferred theme. It was an early version of the theme, where the colors were hardcoded in faces definitions (there were no color variables).
+
+As I kept tweaking it to my liking, gradually diverging from the original, I felt the need to set the colors variables myself. I then borrowed the main structure and package support from [[https://github.com/bruce/emacs-spacegray-theme][spacegray-theme]], which I also used at the time, to make up my new theme. Hence the name =spaceink=.
+
+For most of the time I used [[https://github.com/sharkdp/pastel][pastel]] to manipulate colors in the terminal. More recently I decided to write the =sic= color generator to not get lost in color commands and transformations while also being able to "reproduce" the same colors again.
+
+=spaceink= has changed a lot over time, but is /somewhat stable/ for the past year or so. That's why I finally decided to publish it :)
