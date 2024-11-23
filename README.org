@@ -18,6 +18,19 @@
 #+end_src
 
 
+** Using colors
+
+The function =spaceink-theme-with-colors= returns the colors of =spaceink-theme-palette= by their label, so you can use it elsewhere. For example, to make specific Org mode tags have a distinct color:
+
+#+begin_src emacs-lisp
+(setopt org-tag-faces
+        (spaceink-theme-with-colors
+          `(("@work"     . ,red+1)
+            ("@home"     . ,orange+1)
+            ("@computer" . ,green+1))))
+#+end_src
+
+
 ** Export colors
 
 In =spaceink-export.el=, the function =spaceink-export-xresources= exports color definitions to Xresources format.
