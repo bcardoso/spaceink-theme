@@ -681,7 +681,7 @@
       `(highlight-thing ((,c :background ,highlight :foreground unspecified)))
 
 ;;;;; highlight-symbol
-      `(highlight-symbol-face ((,c :background ,blue-bg)))
+      `(highlight-symbol-face ((,c :background ,purple-bg)))
 
 ;;;;; hydra
       `(hydra-face-red ((,c :weight bold :foreground ,red+1)))
@@ -1106,6 +1106,9 @@
 ;;;;; stripe-buffer
       `(stripe-highlight ((,c :background ,bg+1)))
       `(stripe-hl-line ((,c :background ,region :foreground ,fg)))
+
+;;;;; symbol-overlay
+      `(symbol-overlay-default-face ((,c :background ,purple-bg)))
 
 ;;;;; tab-bar-mode
       `(tab-bar ((,c :background ,bg-slate-2 :foreground ,fg)))
