@@ -1114,7 +1114,7 @@
       `(tab-bar ((,c :background ,bg-slate-2 :foreground ,fg)))
       `(tab-bar-tab-group-current ((,c :box (:line-width -4 :color ,bg-slate) :background ,bg-slate :foreground ,fg :weight bold)))
       `(tab-bar-tab-group-inactive ((,c :box (:line-width -4 :color ,bg-header) :background ,bg-header :foreground ,fg-1)))
-      `(tab-bar-tab ((,c :box (:line-width -4 :color ,bg-slate) :background ,bg-slate :foreground ,fg+2 :weight bold)))
+      `(tab-bar-tab ((,c :box (:line-width -4 :color ,bg-slate+1) :background ,bg-slate+1 :foreground ,fg+2 :weight bold)))
       `(tab-bar-tab-inactive ((,c :box (:line-width -4 :color ,bg-header) :background ,bg-header :foreground ,fg-slate-1)))
       `(tab-bar-tab-ungrouped ((,c :box (:line-width -4 :color ,bg-header) :background ,bg-header :foreground ,fg)))
 
