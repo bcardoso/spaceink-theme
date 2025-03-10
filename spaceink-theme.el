@@ -242,7 +242,7 @@
       `(aw-leading-char-face ((,c :height 1.5 :foreground ,magenta+1 :weight bold)))
 
 ;;;;; activities
-      `(activities-tabs ((,c :foreground ,cyan+2)))
+      `(activities-tabs ((,c :foreground ,blue+2)))
 
 ;;;;; ansi-color
       `(ansi-color-bold ((,c :inherit bold)))
