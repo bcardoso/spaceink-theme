@@ -289,12 +289,12 @@
       `(anzu-replace-to ((,c :inherit isearch)))
 
 ;;;;; avy
-      `(avy-lead-face ((,c :foreground ,fg+2 :background ,magenta-2)))
-      `(avy-lead-face-0 ((,c :foreground ,fg+2 :background ,purple-bg)))
-      `(avy-lead-face-1 ((,c :foreground ,fg+2 :background ,fg-slate-bg)))
-      `(avy-lead-face-2 ((,c :foreground ,fg+2 :background ,red-bg)))
       `(avy-background-face ((,c :foreground ,fg-slate-bg)))
-      `(avy-goto-char-timer-face ((,c :inherit highlight :background ,highlight)))
+      `(avy-goto-char-timer-face ((,c :background ,bg-slate+1 :weight bold)))
+      `(avy-lead-face ((,c :foreground ,fg+2 :background ,magenta-2 :weight bold)))
+      `(avy-lead-face-0 ((,c :foreground ,fg+2 :background ,purple-bg :weight bold)))
+      `(avy-lead-face-1 ((,c :foreground ,fg+2 :background ,fg-slate-bg)))
+      `(avy-lead-face-2 ((,c :foreground ,fg+2 :background ,red-bg :weight bold)))
 
 ;;;;; bookmark
       `(bookmark-face ((,c :background unspecified :foreground ,fg-slate-1)))
