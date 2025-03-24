@@ -459,13 +459,14 @@
       `(ement-room-read-receipt-marker ((,c :background ,highlight :foreground ,highlight)))
 
 ;;;;; emms
-      `(emms-playlist-selected-face ((,c :foreground ,orange)))
-      `(emms-playlist-track-face ((,c :foreground ,blue)))
-      `(emms-browser-track-face ((,c :foreground ,blue)))
-      `(emms-browser-artist-face ((,c :foreground ,red :height 1.3)))
+      `(emms-browser-album-face ((,c :inherit font-lock-keyword-face)))
+      `(emms-browser-artist-face ((,c :inherit font-lock-variable-name-face)))
       `(emms-browser-composer-face ((,c :inherit emms-browser-artist-face)))
+      `(emms-browser-year/genre-face ((,c :foreground ,cyan)))
       `(emms-browser-performer-face ((,c :inherit emms-browser-artist-face)))
-      `(emms-browser-album-face ((,c :foreground ,green :height 1.2)))
+      `(emms-browser-track-face ((,c :foreground ,fg-slate+2)))
+      `(emms-playlist-track-face ((,c :inherit emms-browser-track-face)))
+      `(emms-playlist-selected-face ((,c :foreground ,orange+1)))
 
 ;;;;; erc
       `(erc-direct-msg-face ((,c :foreground ,orange)))
