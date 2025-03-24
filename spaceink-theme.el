@@ -850,6 +850,16 @@
       `(markdown-url-face ((,c :inherit link)))
       `(markdown-link-face ((,c :foreground ,blue :underline t)))
 
+;;;;; mpdel
+      `(mpdel-browser-directory-face ((,c :inherit dired-directory)))
+      `(mpdel-playlist-current-song-face ((,c :inherit font-lock-keyword-face :weight bold)))
+      `(mpdel-tablist-album-face ((,c :foreground ,cyan)))
+      `(mpdel-tablist-artist-face ((,c :inherit default)))
+      `(mpdel-tablist-date-face ((,c :inherit default)))
+      `(mpdel-tablist-disk-face ((,c :inherit shadow)))
+      `(mpdel-tablist-song-name-face ((,c :inherit default)))
+      `(mpdel-tablist-track-face ((,c :inherit font-lock-comment-face)))
+
 ;;;;; mmm-mode
       `(mmm-code-submode-face ((,c :background ,bg+1)))
       `(mmm-comment-submode-face ((,c :inherit font-lock-comment-face)))
