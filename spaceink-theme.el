@@ -703,6 +703,9 @@
       `(ido-indicator ((,c :foreground ,red :background ,bg)))
       `(ido-virtual ((,c :foreground ,comment)))
 
+;;;;; iedit-mode
+      `(iedit-occurrence ((,c :inherit lazy-highlight)))
+
 ;;;;; info
       `(Info-quoted ((,c :foreground ,fg-slate+2)))
 
