@@ -30,52 +30,59 @@
 ;;; Code:
 
 (require 'spaceink-theme)
-(require 'cl-macs)
+
+(defvar spaceink-export-format-string "%s: %s\n")
+
+(defun spaceink-export-format (color-name face &optional attr)
+  "Return a string for COLOR-NAME and FACE.
+Default FACE attribute ATTR is \":foreground\"."
+  (format spaceink-export-format-string
+          color-name
+          (spaceink-theme-face-attr face (or attr :foreground))))
 
 
 ;;;; Xresources
 
 (defun spaceink-export-xresources ()
   "Export spaceink theme colors to Xresources format."
-  (cl-flet ((face-attr (str face &optional attr)
-              (format "%s: %s\n"
-                      str
-                      (spaceink-theme-face-attr face
-                                                (or attr :background)))))
-    (with-current-buffer (get-buffer-create "spaceink.Xresources")
+  (let ((buffer (get-buffer-create "spaceink-theme.Xresources"))
+        (spaceink-export-format-string "%s: %s\n"))
+    (with-current-buffer buffer
       (erase-buffer)
       (insert
        (concat
         "! Spaceink\n"
         "! https://github.com/bcardoso/spaceink-theme\n\n"
-        (face-attr "*.foreground"  'default :foreground)
-        (face-attr "*.background"  'default)
-        (face-attr "*.cursorColor" 'cursor)
-        (face-attr "URxvt.cursorColor" 'cursor)
+        (spaceink-export-format "*.foreground" 'default)
+        (spaceink-export-format "*.background" 'default :background)
+        (spaceink-export-format "*.cursorColor" 'cursor :background)
+        (spaceink-export-format "URxvt.cursorColor" 'cursor  :background)
         "\n! black\n"
-        (face-attr "*.color0"  'ansi-color-black)
-        (face-attr "*.color8"  'ansi-color-bright-black)
+        (spaceink-export-format "*.color0"  'ansi-color-black)
+        (spaceink-export-format "*.color8"  'ansi-color-bright-black)
         "! red\n"
-        (face-attr "*.color1"  'ansi-color-red)
-        (face-attr "*.color9"  'ansi-color-bright-red)
+        (spaceink-export-format "*.color1"  'ansi-color-red)
+        (spaceink-export-format "*.color9"  'ansi-color-bright-red)
         "! green\n"
-        (face-attr "*.color2"  'ansi-color-green)
-        (face-attr "*.color10" 'ansi-color-bright-green)
+        (spaceink-export-format "*.color2"  'ansi-color-green)
+        (spaceink-export-format "*.color10" 'ansi-color-bright-green)
         "! yellow\n"
-        (face-attr "*.color3"  'ansi-color-yellow)
-        (face-attr "*.color11" 'ansi-color-bright-yellow)
+        (spaceink-export-format "*.color3"  'ansi-color-yellow)
+        (spaceink-export-format "*.color11" 'ansi-color-bright-yellow)
         "! blue\n"
-        (face-attr "*.color4"  'ansi-color-blue)
-        (face-attr "*.color12" 'ansi-color-bright-blue)
+        (spaceink-export-format "*.color4"  'ansi-color-blue)
+        (spaceink-export-format "*.color12" 'ansi-color-bright-blue)
         "! magenta\n"
-        (face-attr "*.color5"  'ansi-color-magenta)
-        (face-attr "*.color13" 'ansi-color-bright-magenta)
+        (spaceink-export-format "*.color5"  'ansi-color-magenta)
+        (spaceink-export-format "*.color13" 'ansi-color-bright-magenta)
         "! cyan\n"
-        (face-attr "*.color6"  'ansi-color-cyan)
-        (face-attr "*.color14" 'ansi-color-bright-cyan)
+        (spaceink-export-format "*.color6"  'ansi-color-cyan)
+        (spaceink-export-format "*.color14" 'ansi-color-bright-cyan)
         "! white\n"
-        (face-attr "*.color7"  'ansi-color-white)
-        (face-attr "*.color15" 'ansi-color-bright-white))))))
+        (spaceink-export-format "*.color7"  'ansi-color-white)
+        (spaceink-export-format "*.color15" 'ansi-color-bright-white))))
+    (pop-to-buffer buffer)))
+
 
 
 ;;; Provide
