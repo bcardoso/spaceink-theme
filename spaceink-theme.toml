@@ -1,0 +1,39 @@
+# Colors (Spaceink)
+# Source https://github.com/bcardoso/spaceink-theme
+
+# Default colors
+[colors.primary]
+background = '#0f0b1c'
+foreground = '#e1cebb'
+
+# Cursor colors
+[colors.cursor]
+cursor = '#838dd3'
+text   = '#05030a'
+
+# Selection colors
+[colors.selection]
+background = '#34344e'
+text       = '#ebdbcb'
+
+# Normal colors
+[colors.normal]
+black   = '#0f0b1c'
+red     = '#ee924b'
+green   = '#4ab980'
+yellow  = '#dcc1a6'
+blue    = '#759dbf'
+magenta = '#ce5a79'
+cyan    = '#34a4a4'
+white   = '#d7b592'
+
+# Bright colors
+[colors.bright]
+black   = '#434c94'
+red     = '#f55462'
+green   = '#5cca92'
+yellow  = '#dcc1a6'
+blue    = '#759dbf'
+magenta = '#ad7cd6'
+cyan    = '#34a4a4'
+white   = '#ebdbcb'
