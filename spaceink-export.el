@@ -84,6 +84,61 @@ Default FACE attribute ATTR is \":foreground\"."
     (pop-to-buffer buffer)))
 
 
+;;;; Alacritty
+
+(defun spaceink-export-alacritty ()
+  "Export spaceink theme colors to Alacritty format."
+  (let ((buffer (get-buffer-create "spaceink-theme.toml")))
+    (with-current-buffer buffer
+      (erase-buffer)
+      (insert
+       (concat
+        "# Colors (Spaceink)\n"
+        "# Source https://github.com/bcardoso/spaceink-theme\n"
+        "\n# Default colors\n"
+        "[colors.primary]\n"
+        (let ((spaceink-export-format-string "%-10s = '%s'\n"))
+          (concat
+           (spaceink-export-format "background" 'default :background)
+           (spaceink-export-format "foreground" 'default :foreground)))
+        "\n# Cursor colors\n"
+        "[colors.cursor]\n"
+        (let ((spaceink-export-format-string "%-6s = '%s'\n"))
+          (concat
+           (spaceink-export-format "cursor" 'cursor :background)
+           (spaceink-export-format "text"   'cursor :foreground)))
+        "\n# Selection colors\n"
+        "[colors.selection]\n"
+        (let ((spaceink-export-format-string "%-10s = '%s'\n"))
+          (concat
+           (spaceink-export-format "background" 'region :background)
+           (spaceink-export-format "text"       'region :foreground)))
+        "\n# Normal colors\n"
+        "[colors.normal]\n"
+        (let ((spaceink-export-format-string "%-7s = '%s'\n"))
+          (concat
+           (spaceink-export-format "black"   'ansi-color-black)
+           (spaceink-export-format "red"     'ansi-color-red)
+           (spaceink-export-format "green"   'ansi-color-green)
+           (spaceink-export-format "yellow"  'ansi-color-yellow)
+           (spaceink-export-format "blue"    'ansi-color-blue)
+           (spaceink-export-format "magenta" 'ansi-color-magenta)
+           (spaceink-export-format "cyan"    'ansi-color-cyan)
+           (spaceink-export-format "white"   'ansi-color-white)))
+        "\n# Bright colors\n"
+        "[colors.bright]\n"
+        (let ((spaceink-export-format-string "%-7s = '%s'\n"))
+          (concat
+           (spaceink-export-format "black"   'ansi-color-bright-black)
+           (spaceink-export-format "red"     'ansi-color-bright-red)
+           (spaceink-export-format "green"   'ansi-color-bright-green)
+           (spaceink-export-format "yellow"  'ansi-color-bright-yellow)
+           (spaceink-export-format "blue"    'ansi-color-bright-blue)
+           (spaceink-export-format "magenta" 'ansi-color-bright-magenta)
+           (spaceink-export-format "cyan"    'ansi-color-bright-cyan)
+           (spaceink-export-format "white"   'ansi-color-bright-white))))))
+    (pop-to-buffer buffer)))
+
 
 ;;; Provide
 
