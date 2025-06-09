@@ -418,7 +418,7 @@
       `(eldoc-highlight-function-argument ((,c :inherit line-number-current-line :weight bold)))
 
 ;;;;; eldoc-box
-      `(eldoc-box-body ((,c :inherit default :background ,bg-1)))
+      `(eldoc-box-body ((,c :inherit default :background ,bg-header)))
       `(eldoc-box-border ((,c :inherit border)))
 
 ;;;;; elfeed
