@@ -10,7 +10,7 @@ URxvt.cursorColor: #838dd3
 *.color0: #0f0b1c
 *.color8: #434c94
 ! red
-*.color1: #ee924b
+*.color1: #f55462
 *.color9: #f55462
 ! green
 *.color2: #4ab980

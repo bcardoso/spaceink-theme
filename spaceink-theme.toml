@@ -19,7 +19,7 @@ text       = '#ebdbcb'
 # Normal colors
 [colors.normal]
 black   = '#0f0b1c'
-red     = '#ee924b'
+red     = '#f55462'
 green   = '#4ab980'
 yellow  = '#dcc1a6'
 blue    = '#759dbf'
