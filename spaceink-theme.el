@@ -370,6 +370,11 @@
       `(diff-indicator-changed ((,c :background ,diff-mod :foreground ,yellow+2)))
       `(diff-indicator-removed ((,c :background ,diff-del :foreground ,red+2)))
 
+;;;;; diff-hl
+      `(diff-hl-change ((,c :inherit diff-changed)))
+      `(diff-hl-delete ((,c :inherit diff-removed)))
+      `(diff-hl-insert ((,c :inherit diff-added)))
+
 ;;;;; dired
       `(dired-async-failures ((,c :inherit error)))
       `(dired-async-message ((,c :foreground ,blue)))
