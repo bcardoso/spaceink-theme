@@ -677,7 +677,7 @@
 
 ;;;;; help
       `(help-key-binding ((,c :foreground ,purple :weight bold)))
-      `(help-argument-name ((,c ::foreground ,cyan+1)))
+      `(help-argument-name ((,c :foreground ,green+2)))
       `(describe-variable-value ((,c :foreground ,cyan+2 :weight bold)))
 
 ;;;;; hi-lock-mode
