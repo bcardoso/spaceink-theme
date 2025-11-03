@@ -31,15 +31,15 @@ The function =spaceink-theme-with-colors= returns the colors of =spaceink-theme-
 #+end_src
 
 
-** Export colors
+** Export color scheme
 
-In =spaceink-export.el=, there are functions to export =spaceink= colors to other formats.
+In =spaceink-export.el=, there are functions to export the =spaceink= color scheme to other formats.
 
 *** Xresources
 
-The function =spaceink-export-xresources= exports color definitions to Xresources format.
+The function =spaceink-export-xresources= exports the color scheme to Xresources format.
 
-- [[file:spaceink-theme.Xresources][spaceink-theme.Xresources]]
+- [[file:schemes/spaceink-theme.Xresources][spaceink-theme.Xresources]]
 
 If you wish to use =spaceink= colors in the terminal, add the following line at the end of your =~/.Xresources= file:
 
@@ -56,9 +56,9 @@ xrdb -load  ~/.Xresources
 
 *** Alacritty
 
-The function =spaceink-export-alacritty= exports color definitions to [[https://alacritty.org][Alacritty]] terminal configuration format.
+The function =spaceink-export-alacritty= exports the color scheme to [[https://alacritty.org][Alacritty]] terminal configuration format.
 
-- [[file:spaceink-theme.toml][spaceink-theme.toml]]
+- [[file:schemes/spaceink-theme.toml][spaceink-theme.toml]]
 
 To use =spaceink= colors in Alacritty, add an import to your alacritty.toml:
 
@@ -68,6 +68,14 @@ import = [
     "~/.config/alacritty/spaceink-theme.toml"
 ]
 #+end_src
+
+
+*** Base16
+
+The function =spaceink-export-base16= exports the color scheme to
+[[https://github.com/chriskempson/base16][Base16]] format.
+
+- [[file:schemes/spaceink.yaml][spaceink.yaml]]
 
 
 ** Color generator
