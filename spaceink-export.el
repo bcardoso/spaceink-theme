@@ -140,6 +140,45 @@ Default FACE attribute ATTR is \":foreground\"."
     (pop-to-buffer buffer)))
 
 
+;;;; Base16
+
+;; See https://github.com/chriskempson/base16/blob/main/styling.md
+
+(defun spaceink-export-base16 ()
+  "Export spaceink theme colors to base16 format."
+  (let ((buffer (get-buffer-create "spaceink.yaml"))
+        (repo "https://github.com/bcardoso/spaceink-theme"))
+    (with-current-buffer buffer
+      (erase-buffer)
+      (insert
+       (concat
+        "scheme: \"Spaceink\"\n"
+        (format "author: \"Bruno Cardoso (based on %s)\"\n" repo)
+        (string-replace
+         "#" ""
+         (mapconcat (lambda (color)
+                      (format "%s: \"%s\"" (car color) (cdr color)))
+                    (spaceink-theme-with-colors
+                      `(("base00" . ,bg)
+                        ("base01" . ,bg-slate)
+                        ("base02" . ,region)
+                        ("base03" . ,highlight)
+                        ("base04" . ,fg-2)
+                        ("base05" . ,fg)
+                        ("base06" . ,fg+2)
+                        ("base07" . ,bg+1)
+                        ("base08" . ,red)
+                        ("base09" . ,orange)
+                        ("base0A" . ,yellow)
+                        ("base0B" . ,green)
+                        ("base0C" . ,blue)
+                        ("base0D" . ,cyan)
+                        ("base0E" . ,purple)
+                        ("base0F" . ,magenta)))
+                    "\n")))))
+    (pop-to-buffer buffer)))
+
+
 ;;; Provide
 
 (provide 'spaceink-export)
