@@ -873,7 +873,7 @@
 
 ;;;;; message-mode
       `(message-cited-text ((,c :foreground ,fg-slate)))
-      `(message-cited-text-1 ((,c :inherit message-cited-text)))
+      `(message-cited-text-1 ((,c :foreground ,fg-slate)))
       `(message-cited-text-2 ((,c :foreground ,fg-2)))
       `(message-cited-text-3 ((,c :foreground ,magenta-fg)))
       `(message-cited-text-4 ((,c :foreground ,purple-fg)))
