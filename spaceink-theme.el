@@ -167,7 +167,7 @@
       (magenta       "#bd4766")
       ;; (magenta-1     "#ad3354")
       (magenta-2     "#952845")
-      ;; (magenta-bg    "#35111b")
+      (magenta-bg    "#35111b")
       ))
 
 
@@ -290,11 +290,11 @@
 
 ;;;;; avy
       `(avy-background-face ((,c :foreground ,fg-slate-bg)))
-      `(avy-goto-char-timer-face ((,c :background ,bg-slate+1 :weight bold)))
-      `(avy-lead-face ((,c :foreground ,fg+2 :background ,magenta-2 :weight bold)))
-      `(avy-lead-face-0 ((,c :foreground ,fg+2 :background ,purple-bg :weight bold)))
-      `(avy-lead-face-1 ((,c :foreground ,fg+2 :background ,fg-slate-bg)))
-      `(avy-lead-face-2 ((,c :foreground ,fg+2 :background ,red-bg :weight bold)))
+      `(avy-goto-char-timer-face ((,c :inherit lazy-highlight :weight bold)))
+      `(avy-lead-face ((,c :foreground ,fg+2 :background ,blue-bg :weight bold)))
+      `(avy-lead-face-0 ((,c :foreground ,fg+2 :background ,magenta-bg :weight bold)))
+      `(avy-lead-face-1 ((,c :foreground ,fg+2 :background ,green-bg :weight bold)))
+      `(avy-lead-face-2 ((,c :foreground ,fg+2 :background ,magenta-bg :weight bold)))
 
 ;;;;; bookmark
       `(bookmark-face ((,c :background unspecified :foreground ,fg-slate-1)))
@@ -344,6 +344,8 @@
       `(corfu-bar ((,c :background ,region)))
       `(corfu-border ((,c :background ,border)))
       `(corfu-indexed ((,c :background ,bg-slate-1 :foreground ,fg-1 :height 0.80)))
+      `(corfu-quick1 ((,c :inherit avy-lead-face)))
+      `(corfu-quick2 ((,c :inherit avy-lead-face-0)))
 
 ;;;;; cus-edit
       `(custom-variable-tag ((,c :foreground ,cyan)))
@@ -1166,6 +1168,8 @@
 
 ;;;;; vertico
       `(vertico-group-title ((,c :inherit completions-group-title)))
+      `(vertico-quick1 ((,c :inherit avy-lead-face)))
+      `(vertico-quick2 ((,c :inherit avy-lead-face-0)))
 
 ;;;;; vundo
       `(vundo-default ((,c :inherit default)))
