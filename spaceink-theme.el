@@ -291,9 +291,9 @@
 ;;;;; avy
       `(avy-background-face ((,c :foreground ,fg-slate-bg)))
       `(avy-goto-char-timer-face ((,c :inherit lazy-highlight :weight bold)))
-      `(avy-lead-face ((,c :foreground ,fg+2 :background ,green-bg :weight bold)))
+      `(avy-lead-face ((,c :foreground ,fg+2 :background ,blue-bg :weight bold)))
       `(avy-lead-face-0 ((,c :foreground ,fg+2 :background ,magenta-bg :weight bold)))
-      `(avy-lead-face-1 ((,c :foreground ,fg+2 :background ,green-bg :weight bold)))
+      `(avy-lead-face-1 ((,c :foreground ,fg+2 :background ,blue-bg :weight bold)))
       `(avy-lead-face-2 ((,c :foreground ,fg+2 :background ,magenta-bg :weight bold)))
 
 ;;;;; bookmark
@@ -344,7 +344,7 @@
       `(corfu-bar ((,c :background ,region)))
       `(corfu-border ((,c :background ,border)))
       `(corfu-indexed ((,c :background ,bg-slate-1 :foreground ,fg-1 :height 0.80)))
-      `(corfu-quick1 ((,c :foreground ,fg+2 :background ,green-bg :weight bold)))
+      `(corfu-quick1 ((,c :foreground ,fg+2 :background ,blue-bg :weight bold)))
       `(corfu-quick2 ((,c ::foreground ,fg+2 :background ,magenta-bg :weight bold)))
 
 ;;;;; cus-edit
@@ -1168,7 +1168,7 @@
 
 ;;;;; vertico
       `(vertico-group-title ((,c :inherit completions-group-title)))
-      `(vertico-quick1 ((,c :foreground ,fg+2 :background ,green-bg :weight bold)))
+      `(vertico-quick1 ((,c :foreground ,fg+2 :background ,blue-bg :weight bold)))
       `(vertico-quick2 ((,c :foreground ,fg+2 :background ,magenta-bg :weight bold)))
 
 ;;;;; vundo
