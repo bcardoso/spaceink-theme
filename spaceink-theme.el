@@ -421,6 +421,11 @@
       `(edts-face-error-line ((,c :background unspecified :inherit flymake-error)))
       `(edts-face-error-mode-line ((,c :background unspecified :foreground ,red :weight bold)))
 
+;;;;; eglot
+      `(eglot-highlight-symbol-face ((,c :underline ,bg-slate+2)))
+      `(eglot-mode-line ((,c :inherit font-lock-constant-face :weight bold)))
+      `(eglot-diagnostic-tag-unnecessary-face ((,c :underline (:style wave :color ,cyan))))
+
 ;;;;; eldoc
       `(eldoc-highlight-function-argument ((,c :inherit line-number-current-line :weight bold)))
 
