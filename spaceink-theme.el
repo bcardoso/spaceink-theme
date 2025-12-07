@@ -491,6 +491,10 @@
       `(erc-timestamp-face ((,c :foreground ,cyan)))
       `(erc-keyword-face ((,c :foreground ,green)))
 
+;;;;; ert
+      `(ert-test-result-expected ((,c :background ,diff-add :foreground ,diff-add-fg)))
+      `(ert-test-result-unexpected ((,c :background ,diff-del :foreground ,diff-del-fg)))
+
 ;;;;; eshell
       `(eshell-ls-directory ((,c :inherit dired-directory)))
       `(eshell-prompt ((,c :inherit minibuffer-prompt)))
