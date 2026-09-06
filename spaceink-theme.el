@@ -52,7 +52,7 @@
       (bg-1          "#05030a")
 
       (bg-slate-fg   "#434c94")
-      ;; (bg-slate+2    "#353a60")
+      (bg-slate+2    "#353a60")
       (bg-slate+1    "#2a2e4c")
       (bg-slate      "#1f2238")
       (bg-slate-1    "#141624")
@@ -182,7 +182,7 @@
       `(border ((,c :background ,border)))
       `(cursor ((,c :background ,cursor :foreground ,bg-1)))
       `(default ((,c :foreground ,fg :background ,bg)))
-      `(error ((,c :foreground ,red :weight bold)))
+      `(error ((,c :foreground ,red+1)))
       `(italic ((,c :slant italic)))
       `(link ((,c :foreground ,blue+1 :underline ,fg-slate-2)))
       `(link-visited ((,c :inherit link :foreground ,purple+1)))
@@ -197,7 +197,7 @@
       `(completions-annotations ((,c :inherit (italic shadow))))
       `(completions-common-part ((,c :foreground ,blue :weight bold)))
       `(completions-first-difference ((,c :foreground ,cyan :weight bold)))
-      `(completions-group-title ((,c :foreground ,fg-slate+1 :weight bold)))
+      `(completions-group-title ((,c :foreground ,fg-slate+1 :height 0.9)))
       `(fill-column-indicator ((,c :foreground ,bg+1)))
       `(fringe ((,c :background ,bg :foreground ,fg-slate-1)))
       `(gui-element ((,c :background ,bg+1 :foreground ,fg)))
@@ -226,7 +226,7 @@
       `(font-lock-constant-face ((,c :foreground ,green)))
       `(font-lock-doc-face ((,c :foreground ,fg-slate+2)))
       `(font-lock-doc-string-face ((,c :foreground ,yellow)))
-      `(font-lock-function-name-face ((,c :foreground ,magenta-fg :weight semi-bold)))
+      `(font-lock-function-name-face ((,c :foreground ,red-fg))) ;; ,magenta-fg :weight semi-bold
       `(font-lock-keyword-face ((,c :foreground ,blue)))
       `(font-lock-negation-char-face ((,c :foreground ,yellow)))
       `(font-lock-preprocessor-face ((,c :foreground ,cyan+1)))
@@ -721,7 +721,8 @@
       `(ido-virtual ((,c :foreground ,comment)))
 
 ;;;;; iedit-mode
-      `(iedit-occurrence ((,c :inherit lazy-highlight)))
+      ;; `(iedit-occurrence ((,c :inherit lazy-highlight)))
+      `(iedit-occurrence ((,c :inherit match)))
 
 ;;;;; info
       `(Info-quoted ((,c :foreground ,fg-slate+2)))
