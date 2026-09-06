@@ -86,9 +86,9 @@
   (shell-command-to-string
    (format "pastel color \"%s\" %s %s"
            (sic-format color)
-           (if-let (arg-list (--filter (and (not (eq nil (car it)))
-                                            (not (eq nil (cdr it))))
-                                       (map-pairs args)))
+           (if-let* ((arg-list (--filter (and (not (eq nil (car it)))
+                                              (not (eq nil (cdr it))))
+                                         (map-pairs args))))
                (concat "| "
                        (mapconcat (lambda (action-value)
                                     (format "pastel %s \"%s\""
@@ -312,19 +312,19 @@ When NO-PADDING is non-nil, don't add spaces between labels and values."
 When ERASE-BUFFER is non-nil, erase `sic-buffer' contents before.
 If COMMENT is a string, insert it as a comment on top of the buffer."
   (sic-with-buffer
-    (if erase-buffer
-        (erase-buffer)
-      (goto-char (point-max)))
-    (let ((pos (point)))
-      (lisp-interaction-mode)
-      (display-line-numbers-mode -1)
-      (rainbow-mode +1)
-      (when comment (insert (format ";; %s\n" comment)))
-      (sic-insert color-list)
-      ;; (insert "\n")
-      (goto-char pos)
-      (when (not (get-buffer-window buf))
-        (pop-to-buffer buf)))))
+   (if erase-buffer
+       (erase-buffer)
+     (goto-char (point-max)))
+   (let ((pos (point)))
+     (lisp-interaction-mode)
+     (display-line-numbers-mode -1)
+     (rainbow-mode +1)
+     (when comment (insert (format ";; %s\n" comment)))
+     (sic-insert color-list)
+     ;; (insert "\n")
+     (goto-char pos)
+     (when (not (get-buffer-window buf))
+       (pop-to-buffer buf)))))
 
 (defun sic-view (color-or-list &optional label erase-buffer comment)
   "Insert COLOR-OR-LIST in `sic-buffer'.
@@ -393,16 +393,16 @@ ERASE-BUFFER and COMMENT are options for `sic-list-to-buffer', which see."
   "Insert main color palette in `sic-buffer'."
   (interactive)
   (sic-with-buffer
-    (erase-buffer)
-    (insert ";; Spaceink palette\n"))
+   (erase-buffer)
+   (insert ";; Spaceink palette\n"))
   (sic-list-to-buffer (sic-get-palette)))
 
 (defun sic-shades-palette ()
   "Insert the shades palette in `sic-buffer'."
   (interactive)
   (sic-with-buffer
-    (erase-buffer)
-    (insert ";; Color shades for Spaceink palette\n"))
+   (erase-buffer)
+   (insert ";; Color shades for Spaceink palette\n"))
   (mapc (lambda (c)
           (sic-shades-to-buffer (car c) (cadr c)))
         (sic-get-palette)))
